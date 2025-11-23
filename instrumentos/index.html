@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atlas Galáctico - Instrumentos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0b3d91",
+              "accent": "#f39c12",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101722",
+              "card-light": "#ffffff",
+              "card-dark": "#19212e",
+              "subtle-light": "#e9ecef",
+              "subtle-dark": "#233148",
+              "text-light": "#101722",
+              "text-dark": "#e8eef8",
+              "text-muted-light": "#6c757d",
+              "text-muted-dark": "#92a6c9",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative min-h-screen w-full overflow-x-hidden">
+<!-- NavigationDrawer -->
+<div class="absolute left-0 top-0 z-50 h-full w-full bg-black/40 hidden"> <!-- Initially hidden -->
+<div class="flex h-full w-10/12 flex-col gap-4 bg-background-light dark:bg-background-dark p-4 shadow-2xl">
+<div class="flex items-center justify-between pb-4">
+<h2 class="text-xl font-bold">Atlas Galáctico</h2>
+<button class="text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<ul class="flex flex-col gap-2">
+<li class="flex h-12 items-center gap-4 rounded-lg px-4">
+<span class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">public</span>
+<p class="text-base font-bold">Planetas</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-lg px-4">
+<span class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">rocket_launch</span>
+<p class="text-base font-bold">Misiones</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-lg px-4 bg-primary/20 text-accent">
+<span class="material-symbols-outlined">satellite_alt</span>
+<p class="text-base font-bold">Instrumentos</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-lg px-4">
+<span class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">person</span>
+<p class="text-base font-bold">Perfil</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-lg px-4">
+<span class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">settings</span>
+<p class="text-base font-bold">Configuración</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex h-auto w-full flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-3 backdrop-blur-sm">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+<h1 class="flex-1 text-center text-xl font-bold leading-tight tracking-tight">Instrumentos</h1>
+<div class="size-10 shrink-0"></div> <!-- Spacer -->
+</header>
+<!-- SearchBar -->
+<div class="px-4 py-3">
+<label class="flex h-12 w-full flex-col">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="flex items-center justify-center rounded-l-xl border-y border-l border-gray-200 bg-subtle-light dark:border-subtle-dark/50 dark:bg-subtle-dark pl-4 text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl border border-gray-200 bg-card-light px-4 text-base font-normal leading-normal text-text-light placeholder:text-text-muted-light focus:outline-none focus:ring-2 focus:ring-primary dark:border-subtle-dark/50 dark:bg-card-dark dark:text-text-dark dark:placeholder:text-text-muted-dark dark:focus:ring-accent" placeholder="Buscar instrumento..." value=""/>
+</div>
+</label>
+</div>
+<!-- Chips -->
+<div class="flex gap-3 px-4 py-2 overflow-x-auto">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full border border-gray-200 bg-card-light pl-4 pr-3 text-sm font-medium shadow-sm dark:border-subtle-dark/50 dark:bg-card-dark">
+<p>Tipo</p>
+<span class="material-symbols-outlined text-lg text-text-muted-light dark:text-text-muted-dark">arrow_drop_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full border border-gray-200 bg-primary/20 pl-4 pr-3 text-sm font-medium text-accent shadow-sm dark:border-primary/50 dark:bg-primary/20">
+<p>Estado</p>
+<span class="material-symbols-outlined text-lg">arrow_drop_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full border border-gray-200 bg-card-light pl-4 pr-3 text-sm font-medium shadow-sm dark:border-subtle-dark/50 dark:bg-card-dark">
+<p>Misión</p>
+<span class="material-symbols-outlined text-lg text-text-muted-light dark:text-text-muted-dark">arrow_drop_down</span>
+</button>
+</div>
+<!-- SegmentedButtons -->
+<div class="flex px-4 py-4">
+<div class="flex h-10 flex-1 items-center justify-center rounded-xl bg-subtle-light p-1 dark:bg-subtle-dark">
+<label class="flex h-full grow cursor-pointer items-center justify-center overflow-hidden rounded-lg px-2 text-text-muted-light has-[:checked]:bg-card-light has-[:checked]:text-text-light has-[:checked]:shadow-sm dark:text-text-muted-dark dark:has-[:checked]:bg-card-dark dark:has-[:checked]:text-text-dark">
+<span class="truncate text-sm font-medium">Lista</span>
+<input class="invisible w-0" name="view-toggle" type="radio" value="Lista"/>
+</label>
+<label class="flex h-full grow cursor-pointer items-center justify-center overflow-hidden rounded-lg px-2 text-text-muted-light has-[:checked]:bg-card-light has-[:checked]:text-text-light has-[:checked]:shadow-sm dark:text-text-muted-dark dark:has-[:checked]:bg-card-dark dark:has-[:checked]:text-text-dark">
+<span class="truncate text-sm font-medium">Cuadrícula</span>
+<input checked="" class="invisible w-0" name="view-toggle" type="radio" value="Cuadrícula"/>
+</label>
+</div>
+</div>
+<!-- Instrument Cards Grid -->
+<div class="grid grid-cols-1 gap-4 px-4 pb-24 md:grid-cols-2 lg:grid-cols-3">
+<!-- Card 1 -->
+<div class="flex flex-col rounded-xl border border-gray-200 bg-card-light p-4 shadow-sm dark:border-subtle-dark/50 dark:bg-card-dark">
+<div class="flex items-start justify-between">
+<h3 class="text-lg font-bold">Hubble's WFC3</h3>
+<div class="flex items-center gap-2 rounded-full bg-green-500/20 px-2.5 py-1 text-xs font-semibold text-green-700 dark:text-green-400">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span>Activo</span>
+</div>
+</div>
+<p class="mt-1 text-sm text-text-muted-light dark:text-text-muted-dark">Cámara de Campo Amplio</p>
+<div class="mt-4 border-t border-gray-200 pt-3 dark:border-subtle-dark/50">
+<p class="text-xs font-medium uppercase text-text-muted-light dark:text-text-muted-dark">Misión Asociada</p>
+<p class="text-sm font-medium">STS-125</p>
+</div>
+<a class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-primary/10 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary/20 dark:bg-accent/10 dark:text-accent dark:hover:bg-accent/20" href="#">
+<span>Ver más</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col rounded-xl border border-gray-200 bg-card-light p-4 shadow-sm dark:border-subtle-dark/50 dark:bg-card-dark">
+<div class="flex items-start justify-between">
+<h3 class="text-lg font-bold">JWST's MIRI</h3>
+<div class="flex items-center gap-2 rounded-full bg-green-500/20 px-2.5 py-1 text-xs font-semibold text-green-700 dark:text-green-400">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span>Activo</span>
+</div>
+</div>
+<p class="mt-1 text-sm text-text-muted-light dark:text-text-muted-dark">Instrumento de Infrarrojo Medio</p>
+<div class="mt-4 border-t border-gray-200 pt-3 dark:border-subtle-dark/50">
+<p class="text-xs font-medium uppercase text-text-muted-light dark:text-text-muted-dark">Misión Asociada</p>
+<p class="text-sm font-medium">James Webb Space Telescope</p>
+</div>
+<a class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-primary/10 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary/20 dark:bg-accent/10 dark:text-accent dark:hover:bg-accent/20" href="#">
+<span>Ver más</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col rounded-xl border border-gray-200 bg-card-light p-4 shadow-sm dark:border-subtle-dark/50 dark:bg-card-dark">
+<div class="flex items-start justify-between">
+<h3 class="text-lg font-bold">Voyager's PLS</h3>
+<div class="flex items-center gap-2 rounded-full bg-yellow-500/20 px-2.5 py-1 text-xs font-semibold text-yellow-700 dark:text-yellow-400">
+<div class="size-2 rounded-full bg-yellow-500"></div>
+<span>Standby</span>
+</div>
+</div>
+<p class="mt-1 text-sm text-text-muted-light dark:text-text-muted-dark">Espectrómetro de Plasma</p>
+<div class="mt-4 border-t border-gray-200 pt-3 dark:border-subtle-dark/50">
+<p class="text-xs font-medium uppercase text-text-muted-light dark:text-text-muted-dark">Misión Asociada</p>
+<p class="text-sm font-medium">Voyager 1</p>
+</div>
+<a class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-primary/10 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary/20 dark:bg-accent/10 dark:text-accent dark:hover:bg-accent/20" href="#">
+<span>Ver más</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col rounded-xl border border-gray-200 bg-card-light p-4 shadow-sm dark:border-subtle-dark/50 dark:bg-card-dark">
+<div class="flex items-start justify-between">
+<h3 class="text-lg font-bold">Philae's COSAC</h3>
+<div class="flex items-center gap-2 rounded-full bg-red-500/20 px-2.5 py-1 text-xs font-semibold text-red-700 dark:text-red-400">
+<div class="size-2 rounded-full bg-red-500"></div>
+<span>Inactivo</span>
+</div>
+</div>
+<p class="mt-1 text-sm text-text-muted-light dark:text-text-muted-dark">Analizador de Muestras</p>
+<div class="mt-4 border-t border-gray-200 pt-3 dark:border-subtle-dark/50">
+<p class="text-xs font-medium uppercase text-text-muted-light dark:text-text-muted-dark">Misión Asociada</p>
+<p class="text-sm font-medium">Rosetta</p>
+</div>
+<a class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-primary/10 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary/20 dark:bg-accent/10 dark:text-accent dark:hover:bg-accent/20" href="#">
+<span>Ver más</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white shadow-lg transition-transform hover:scale-105 active:scale-95 dark:bg-accent dark:text-background-dark">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</body></html>

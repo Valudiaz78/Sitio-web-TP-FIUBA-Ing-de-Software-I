@@ -92,6 +92,17 @@
 <span class="material-symbols-outlined text-3xl">search</span>
 </button>
 </div>
+<!-- Site nav (links to clean folders) -->
+<nav class="px-4 py-3 bg-background-light/5">
+  <div class="flex flex-wrap gap-3">
+    <a href="/dashboard_del_atlas_galactico/" class="rounded-md px-3 py-2 text-sm font-medium bg-primary/10 text-primary">Dashboard</a>
+    <a href="/listado_de_cuerpos_celestes/" class="rounded-md px-3 py-2 text-sm font-medium bg-primary/10 text-primary">Listado</a>
+    <a href="/detalle_de_cuerpo_celeste/" class="rounded-md px-3 py-2 text-sm font-medium bg-primary/10 text-primary">Cuerpo celeste</a>
+    <a href="/detalle_de_mision/" class="rounded-md px-3 py-2 text-sm font-medium bg-primary/10 text-primary">Misión</a>
+    <a href="/gestion_de_misiones/" class="rounded-md px-3 py-2 text-sm font-medium bg-primary/10 text-primary">Gestión</a>
+    <a href="/nuevo_cuerpo_celeste_formulario/" class="rounded-md px-3 py-2 text-sm font-medium bg-primary/10 text-primary">Nuevo</a>
+  </div>
+</nav>
 </div>
 <!-- Headline Text -->
 <h1 class="px-4 pb-3 pt-6 text-left font-display text-[32px] font-bold leading-tight tracking-tight text-text-primary-dark">Galactic Overview</h1>
@@ -127,22 +138,22 @@
 <h2 class="px-4 pb-3 pt-8 font-display text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Explore Categories</h2>
 <!-- New Component: Quick Access Buttons -->
 <div class="grid grid-cols-2 gap-4 p-4">
-<button class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+<a href="/listado_de_cuerpos_celestes/" class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
 <span class="material-symbols-outlined">public</span>
-                    Planets
-                </button>
-<button class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+          Planets
+        </a>
+<a href="/listado_de_cuerpos_celestes/" class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
 <span class="material-symbols-outlined">star</span>
-                    Stars
-                </button>
-<button class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+          Stars
+        </a>
+<a href="/gestion_de_misiones/" class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
 <span class="material-symbols-outlined">rocket_launch</span>
-                    Missions
-                </button>
-<button class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+          Missions
+        </a>
+<a href="/listado_de_cuerpos_celestes/" class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
 <span class="material-symbols-outlined">filter_drama</span>
-                    Nebulae
-                </button>
+          Nebulae
+        </a>
 </div>
 </div>
 </div>

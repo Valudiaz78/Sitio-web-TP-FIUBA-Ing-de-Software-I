@@ -74,31 +74,52 @@
 </div>
 <!-- Filter Chips -->
 <div class="flex gap-3 px-4 py-3 overflow-x-auto">
-<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-accent px-4 py-2">
-<p class="text-background-dark text-sm font-bold leading-normal">Todos</p>
-</button>
-<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-dark px-4 py-2 hover:bg-white/10 active:bg-white/20">
-<p class="text-text-light text-sm font-medium leading-normal">Planetas</p>
-</button>
-<!-- ... -->
+    <a href="#planetas" class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-accent px-4 py-2">
+        <p class="text-background-dark text-sm font-bold leading-normal">Planetas</p>
+    </a>
+    <a href="#estrellas" class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-dark px-4 py-2 hover:bg-white/10 active:bg-white/20">
+        <p class="text-text-light text-sm font-medium leading-normal">Estrellas</p>
+    </a>
 </div>
 <!-- Celestial Body Cards List -->
 <div class="flex flex-col gap-4 p-4">
-<!-- Card 1 -->
-<div class="flex items-center justify-between gap-4 rounded-xl bg-card-dark p-4">
-<div class="flex flex-col gap-1 flex-[2_2_0px]">
-<p class="text-accent text-xs font-bold uppercase tracking-wider">Planeta</p>
-<p class="text-text-light text-lg font-bold leading-tight">Marte</p>
-<p class="text-text-dark text-sm font-normal leading-normal">4to planeta desde el Sol</p>
-</div>
-<div class="flex-shrink-0">
-<div class="h-20 w-20 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Una representación artística del planeta Marte, con su distintiva superficie roja y casquetes polares." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkOVtYgQuYSBhJsfH4x_Vn_5lrKi__3yJtJ-W1vLIeUu1CqjvjTg_IWjrNcRgB0KrHcHEZNm_wYgDwgRK95HTopMspDfRQKSwvD2UCrgZ6p6RwGWk-kGjF4LRM48ydiPKI7hQjdd74FUC0nTmUPqRC54GAvg2MdEIhimtand3vijJ_KfpvudF-zGyswoqtsFdNml_WcAJw5fvkcuUNM-NCcWKLKX4CL4e7reaqsS02xvtEGtaFHlwzJ8_ooS-XU29BgEQRSLmSy0A");'></div>
-</div>
-<div class="flex-shrink-0">
-<span class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</span>
-</div>
-</div>
-<!-- More cards... -->
+    <!-- Planetas section -->
+    <div id="planetas" class="space-y-4">
+        <h2 class="text-text-light text-xl font-bold">Planetas</h2>
+        <!-- Card: Marte -->
+        <div class="flex items-center justify-between gap-4 rounded-xl bg-card-dark p-4">
+            <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                <p class="text-accent text-xs font-bold uppercase tracking-wider">Planeta</p>
+                <p class="text-text-light text-lg font-bold leading-tight">Marte</p>
+                <p class="text-text-dark text-sm font-normal leading-normal">4to planeta desde el Sol</p>
+            </div>
+            <div class="flex-shrink-0">
+            <img class="h-20 w-20 rounded-lg object-cover" alt="Representación de Marte" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkOVtYgQuYSBhJsfH4x_Vn_5lrKi__3yJtJ-W1vLIeUu1CqjvjTg_IWjrNcRgB0KrHcHEZNm_wYgDwgRK95HTopMspDfRQKSwvD2UCrgZ6p6RwGWk-kGjF4LRM48ydiPKI7hQjdd74FUC0nTmUPqRC54GAvg2MdEIhimtand3vijJ_KfpvudF-zGyswoqtsFdNml_WcAJw5fvkcuUNM-NCcWKLKX4CL4e7reaqsS02xvtEGtaFHlwzJ8_ooS-XU29BgEQRSLmSy0A" />
+            </div>
+            <div class="flex-shrink-0">
+                <a href="../detalle_de_cuerpo_celeste/" class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Estrellas section -->
+    <div id="estrellas" class="space-y-4 pt-6">
+        <h2 class="text-text-light text-xl font-bold">Estrellas</h2>
+        <!-- Card: Sol -->
+        <div class="flex items-center justify-between gap-4 rounded-xl bg-card-dark p-4">
+            <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                <p class="text-accent text-xs font-bold uppercase tracking-wider">Estrella</p>
+                <p class="text-text-light text-lg font-bold leading-tight">Sol</p>
+                <p class="text-text-dark text-sm font-normal leading-normal">Estrella principal del Sistema Solar</p>
+            </div>
+            <div class="flex-shrink-0">
+            <img class="h-20 w-20 rounded-lg object-cover" alt="Representación del Sol" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEWSPTury4N0teCRRw8G6jxuqu8e398g8cqD30zIJnDBujw-curXTH_XyknfDt-6N5HNguQlxqCnA5HOBdXfPkeAFRV9GBU1rrb8lQahY1xpEC5H9QvZ2VKhG_7PmYxBiSbjBOq_cfKMksdNLkaotr1uviuNs_gHQ30o1DnF8qbh5kgiOkPZdagy03xdpsaw49mVfCB_pzet0zn44q1T8rhQB30TFM4Z8onVfDnMeWFhTZcU3xIEDuKSNRdqkUCrA5fXfN1pRdS80" />
+            </div>
+            <div class="flex-shrink-0">
+                <a href="../detalle_de_cuerpo_celeste/" class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</a>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 </body></html>

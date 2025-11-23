@@ -51,40 +51,50 @@
   </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-text-primary-dark">
 <div class="relative min-h-screen w-full flex-col">
-<!-- Navigation Drawer -->
-<div class="absolute left-0 top-0 z-50 h-full w-full bg-black/40 hidden">
-<div class="flex h-full min-h-screen w-10/12 flex-col gap-4 bg-background-dark p-4">
-<p class="px-4 pb-2 pt-4 font-display text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Cmdr. Alex Vance</p>
-<ul class="flex flex-col gap-4">
-<li class="flex h-12 items-center gap-4 rounded-lg bg-primary/20 px-4">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-<p class="truncate font-display text-base font-bold leading-tight text-secondary">Dashboard</p>
-</li>
-<li class="flex h-12 items-center gap-4 rounded-lg px-4">
-<span class="material-symbols-outlined text-text-primary-dark">map</span>
-<p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Starmap</p>
-</li>
-<li class="flex h-12 items-center gap-4 rounded-lg px-4">
-<span class="material-symbols-outlined text-text-primary-dark">public</span>
-<p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Celestial Bodies</p>
-</li>
-<li class="flex h-12 items-center gap-4 rounded-lg px-4">
-<span class="material-symbols-outlined text-text-primary-dark">rocket_launch</span>
-<p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Missions</p>
-</li>
-<li class="flex h-12 items-center gap-4 rounded-lg px-4">
-<span class="material-symbols-outlined text-text-primary-dark">book_4</span>
-<p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Encyclopedia</p>
-</li>
-</ul>
-</div>
+<!-- Navigation Drawer (toggleable) -->
+<div id="nav-drawer" class="absolute left-0 top-0 z-50 h-full w-full bg-black/40 hidden" role="dialog" aria-hidden="true">
+  <div class="flex h-full min-h-screen w-10/12 flex-col gap-4 bg-background-dark p-4">
+    <p class="px-4 pb-2 pt-4 font-display text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Cmdr. Alex Vance</p>
+    <ul class="flex flex-col gap-4">
+      <li>
+        <a href="/" class="flex h-12 items-center gap-4 rounded-lg bg-primary/20 px-4">
+          <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">home</span>
+          <p class="truncate font-display text-base font-bold leading-tight text-secondary">Inicio</p>
+        </a>
+      </li>
+      <li>
+        <a href="dashboard_del_atlas_galactico/" class="flex h-12 items-center gap-4 rounded-lg px-4">
+          <span class="material-symbols-outlined text-text-primary-dark">public</span>
+          <p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Planetas</p>
+        </a>
+      </li>
+      <li>
+        <a href="listado_de_cuerpos_celestes/" class="flex h-12 items-center gap-4 rounded-lg px-4">
+          <span class="material-symbols-outlined text-text-primary-dark">star</span>
+          <p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Estrellas</p>
+        </a>
+      </li>
+      <li>
+        <a href="gestion_de_misiones/" class="flex h-12 items-center gap-4 rounded-lg px-4">
+          <span class="material-symbols-outlined text-text-primary-dark">rocket_launch</span>
+          <p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Misiones</p>
+        </a>
+      </li>
+      <li>
+        <a href="nuevo_cuerpo_celeste_formulario/" class="flex h-12 items-center gap-4 rounded-lg px-4">
+          <span class="material-symbols-outlined text-text-primary-dark">add</span>
+          <p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Nuevo cuerpo</p>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
 <!-- Main Content -->
 <div class="flex flex-col">
 <!-- Top App Bar -->
 <div class="flex items-center justify-between bg-background-dark p-4 pb-2">
-<button class="flex h-12 w-12 shrink-0 items-center justify-center text-text-primary-dark">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<button class="flex h-12 w-12 shrink-0 items-center justify-center text-text-primary-dark menu-toggle" aria-controls="nav-drawer" aria-expanded="false">
+  <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 <h2 class="flex-1 text-center font-display text-lg font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Atlas Galáctico</h2>
 <div class="flex w-12 items-center justify-end">
@@ -132,7 +142,7 @@
 <span class="material-symbols-outlined">public</span>
           Planetas
         </a>
-<a href="listado_de_cuerpos_celestes/#estrellas" class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+<a href="estrella/" class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
 <span class="material-symbols-outlined">star</span>
           Estrellas
         </a>
@@ -142,6 +152,19 @@
         </a>
 <!-- 'Nebulosas' removed: not part of project domain -->
 </div>
-</div>
-</div>
+<script>
+  // small menu toggle for hamburger menu
+  (function(){
+    const toggles = document.querySelectorAll('.menu-toggle');
+    toggles.forEach(btn => btn.addEventListener('click', function(e){
+      const targetId = btn.getAttribute('aria-controls');
+      const drawer = document.getElementById(targetId);
+      if(!drawer) return;
+      const isHidden = drawer.classList.contains('hidden');
+      drawer.classList.toggle('hidden', !isHidden ? true : false);
+      drawer.setAttribute('aria-hidden', String(isHidden ? 'false' : 'true'));
+      btn.setAttribute('aria-expanded', String(isHidden));
+    }));
+  })();
+</script>
 </body></html>

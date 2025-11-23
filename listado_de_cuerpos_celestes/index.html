@@ -46,11 +46,24 @@
 <div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark text-text-light group/design-root overflow-x-hidden">
 <!-- Top App Bar -->
 <div class="sticky top-0 z-10 flex items-center bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm">
-<button class="text-text-light flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 active:bg-white/20">
-<span class="material-symbols-outlined text-2xl">menu</span>
-</button>
-<h1 class="text-text-light text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Atlas Galáctico</h1>
-<div class="size-10 shrink-0"></div> <!-- Spacer to balance the title -->
+    <button class="text-text-light flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 active:bg-white/20 menu-toggle" aria-controls="nav-drawer" aria-expanded="false">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+    <h1 class="text-text-light text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Atlas Galáctico</h1>
+    <div class="size-10 shrink-0"></div> <!-- Spacer to balance the title -->
+</div>
+<!-- Navigation Drawer (depth=1) -->
+<div id="nav-drawer" class="absolute left-0 top-0 z-50 h-full w-full bg-black/40 hidden" role="dialog" aria-hidden="true">
+    <div class="flex h-full min-h-screen w-10/12 flex-col gap-4 bg-background-dark p-4">
+        <div class="px-4 pb-2 pt-4 font-display text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Menú</div>
+        <ul class="flex flex-col gap-4">
+            <li><a href="../index.html" class="flex h-12 items-center gap-4 rounded-lg bg-primary/20 px-4"><span class="material-symbols-outlined">home</span><span>Inicio</span></a></li>
+            <li><a href="index.html#planetas" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">public</span><span>Planetas</span></a></li>
+            <li><a href="estrellas/index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">star</span><span>Estrellas</span></a></li>
+            <li><a href="../gestion_de_misiones/index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">rocket_launch</span><span>Misiones</span></a></li>
+            <li><a href="../nuevo_cuerpo_celeste_formulario/index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">add</span><span>Nuevo cuerpo</span></a></li>
+        </ul>
+    </div>
 </div>
 <!-- Simple navigation to connect site areas -->
 <nav class="px-4 py-2">
@@ -106,4 +119,28 @@
     </div>
 </div>
 </div>
+<script>
+    (function(){
+        const toggles = document.querySelectorAll('.menu-toggle');
+        const drawer = document.getElementById('nav-drawer');
+        if(!drawer) return;
+        function setHidden(h){ drawer.classList.toggle('hidden', h); drawer.setAttribute('aria-hidden', String(h)); }
+        toggles.forEach(btn => btn.addEventListener('click', (e)=>{
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            setHidden(expanded);
+        }));
+        // close on click outside
+        document.addEventListener('click', (e)=>{
+            if(drawer.classList.contains('hidden')) return;
+            if(!drawer.contains(e.target) && !e.target.closest('.menu-toggle')){
+                setHidden(true); document.querySelectorAll('.menu-toggle').forEach(b=>b.setAttribute('aria-expanded','false'));
+            }
+        });
+        // close on Escape
+        document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') setHidden(true); });
+        // close on link click
+        drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=> setHidden(true)));
+    })();
+</script>
 </body></html>

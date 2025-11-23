@@ -51,13 +51,29 @@
 <!-- TopAppBar -->
 <header class="sticky top-0 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
 <div class="flex items-center p-4">
-<button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-black dark:text-white">
-<span class="material-symbols-outlined text-2xl">menu</span>
-</button>
-<h2 class="flex-1 text-center text-lg font-bold tracking-tight text-black dark:text-white">Atlas Galáctico</h2>
-<button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-black dark:text-white">
-<span class="material-symbols-outlined text-2xl">search</span>
-</button>
+  <button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-black dark:text-white menu-toggle" aria-controls="nav-drawer" aria-expanded="false">
+    <span class="material-symbols-outlined text-2xl">menu</span>
+  </button>
+  <h2 class="flex-1 text-center text-lg font-bold tracking-tight text-black dark:text-white">Atlas Galáctico</h2>
+  <button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-black dark:text-white">
+    <span class="material-symbols-outlined text-2xl">search</span>
+  </button>
+</div>
+<!-- Navigation Drawer (depth=2) -->
+<div id="nav-drawer" class="absolute left-0 top-0 z-50 h-full w-full bg-black/40 hidden" role="dialog" aria-hidden="true">
+  <div class="flex h-full w-10/12 max-w-sm flex-col gap-4 bg-background-dark p-4">
+    <div class="flex items-center justify-between pb-4">
+      <h3 class="text-xl font-bold text-white">Menú</h3>
+      <button class="text-white"> <span class="material-symbols-outlined text-2xl">close</span> </button>
+    </div>
+    <ul class="flex flex-col gap-2">
+      <li><a href="../../index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">home</span><span>Inicio</span></a></li>
+      <li><a href="../index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">public</span><span>Listado</span></a></li>
+      <li><a href="index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">star</span><span>Estrellas</span></a></li>
+      <li><a href="../../gestion_de_misiones/index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">rocket_launch</span><span>Misiones</span></a></li>
+      <li><a href="../../nuevo_cuerpo_celeste_formulario/index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">add</span><span>Nuevo cuerpo</span></a></li>
+    </ul>
+  </div>
 </div>
 </header>
 <!-- NavigationDrawer (Hidden by default, for demonstration) -->
@@ -193,4 +209,42 @@
 </div>
 </footer>
 </div>
+<script>
+  // Drawer toggle script (works across pages)
+  (function(){
+    const toggle = document.querySelector('.menu-toggle');
+    const drawer = document.getElementById('nav-drawer');
+    if(!toggle || !drawer) return;
+    const drawerPanel = drawer.querySelector('div');
+
+    function openDrawer(){
+      drawer.classList.remove('hidden');
+      drawer.setAttribute('aria-hidden','false');
+      toggle.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer(){
+      drawer.classList.add('hidden');
+      drawer.setAttribute('aria-hidden','true');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', (e)=>{
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      if(isOpen) closeDrawer(); else openDrawer();
+    });
+
+    // close when clicking outside panel
+    drawer.addEventListener('click', (e)=>{
+      if(!drawerPanel.contains(e.target)) closeDrawer();
+    });
+
+    // close on Escape
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDrawer(); });
+
+    // close when any internal link clicked
+    drawer.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> closeDrawer()));
+  })();
+</script>
 </body></html>

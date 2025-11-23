@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Atlas Galáctico</title>
+<title>Atlas Galáctico - Listado</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -52,26 +51,26 @@
     <h1 class="text-text-light text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Atlas Galáctico</h1>
     <div class="size-10 shrink-0"></div> <!-- Spacer to balance the title -->
 </div>
-<!-- Navigation Drawer (depth=1) -->
+<!-- Navigation Drawer -->
 <div id="nav-drawer" class="absolute left-0 top-0 z-50 h-full w-full bg-black/40 hidden" role="dialog" aria-hidden="true">
     <div class="flex h-full min-h-screen w-10/12 flex-col gap-4 bg-background-dark p-4">
         <div class="px-4 pb-2 pt-4 font-display text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Menú</div>
         <ul class="flex flex-col gap-4">
             <li><a href="../index.html" class="flex h-12 items-center gap-4 rounded-lg bg-primary/20 px-4"><span class="material-symbols-outlined">home</span><span>Inicio</span></a></li>
-            <li><a href="index.html#planetas" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">public</span><span>Planetas</span></a></li>
-            <li><a href="estrellas/index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">star</span><span>Estrellas</span></a></li>
-            <li><a href="../gestion_de_misiones/index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">rocket_launch</span><span>Misiones</span></a></li>
-            <li><a href="../nuevo_cuerpo_celeste_formulario/index.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">add</span><span>Nuevo cuerpo</span></a></li>
+            <li><a href="listado.html#planetas" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">public</span><span>Planetas</span></a></li>
+            <li><a href="estrellas.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">star</span><span>Estrellas</span></a></li>
+            <li><a href="gestion_misiones.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">rocket_launch</span><span>Misiones</span></a></li>
+            <li><a href="nuevo_cuerpo_celeste.html" class="flex h-12 items-center gap-4 rounded-lg px-4"><span class="material-symbols-outlined">add</span><span>Nuevo cuerpo</span></a></li>
         </ul>
     </div>
 </div>
 <!-- Simple navigation to connect site areas -->
 <nav class="px-4 py-2">
     <div class="flex gap-3">
-        <a href="../" class="text-sm font-bold text-text-light/90">Inicio</a>
-        <a href="../dashboard_del_atlas_galactico/" class="text-sm text-text-light/80">Dashboard</a>
-        <a href="../gestion_de_misiones/" class="text-sm text-text-light/80">Misiones</a>
-        <a href="../nuevo_cuerpo_celeste_formulario/" class="text-sm text-text-light/80">Nuevo cuerpo</a>
+        <a href="../index.html" class="text-sm font-bold text-text-light/90">Inicio</a>
+        <a href="#" class="text-sm text-text-light/80">Dashboard</a>
+        <a href="gestion_misiones.html" class="text-sm text-text-light/80">Misiones</a>
+        <a href="nuevo_cuerpo_celeste.html" class="text-sm text-text-light/80">Nuevo cuerpo</a>
     </div>
 </nav>
 <!-- Search Bar -->
@@ -90,7 +89,7 @@
     <a href="#planetas" class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-accent px-4 py-2">
         <p class="text-background-dark text-sm font-bold leading-normal">Planetas</p>
     </a>
-            <a href="estrellas/index.html" class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-dark px-4 py-2 hover:bg-white/10 active:bg-white/20">
+            <a href="estrellas.html" class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-dark px-4 py-2 hover:bg-white/10 active:bg-white/20">
             <p class="text-text-light text-sm font-medium leading-normal">Estrellas</p>
         </a>
 </div>
@@ -110,7 +109,7 @@
             <img class="h-20 w-20 rounded-lg object-cover" alt="Representación de Marte" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkOVtYgQuYSBhJsfH4x_Vn_5lrKi__3yJtJ-W1vLIeUu1CqjvjTg_IWjrNcRgB0KrHcHEZNm_wYgDwgRK95HTopMspDfRQKSwvD2UCrgZ6p6RwGWk-kGjF4LRM48ydiPKI7hQjdd74FUC0nTmUPqRC54GAvg2MdEIhimtand3vijJ_KfpvudF-zGyswoqtsFdNml_WcAJw5fvkcuUNM-NCcWKLKX4CL4e7reaqsS02xvtEGtaFHlwzJ8_ooS-XU29BgEQRSLmSy0A" />
             </div>
             <div class="flex-shrink-0">
-                <a href="../detalle_de_cuerpo_celeste/" class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</a>
+                <a href="detalle_cuerpo_celeste.html" class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</a>
             </div>
         </div>
     </div>
@@ -130,16 +129,13 @@
             btn.setAttribute('aria-expanded', String(!expanded));
             setHidden(expanded);
         }));
-        // close on click outside
         document.addEventListener('click', (e)=>{
             if(drawer.classList.contains('hidden')) return;
             if(!drawer.contains(e.target) && !e.target.closest('.menu-toggle')){
                 setHidden(true); document.querySelectorAll('.menu-toggle').forEach(b=>b.setAttribute('aria-expanded','false'));
             }
         });
-        // close on Escape
         document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') setHidden(true); });
-        // close on link click
         drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=> setHidden(true)));
     })();
 </script>

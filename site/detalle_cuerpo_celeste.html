@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atlas Galáctico - Detalle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#0b3d91", "background-light": "#f6f7f8", "background-dark": "#101722", "accent": "#f39c12" }, fontFamily: { "display": ["Space Grotesk", "sans-serif"] }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, }, }, }
+  </script>
+<style> body { min-height: max(884px, 100dvh); } </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-40 flex items-center bg-background-dark/80 backdrop-blur-sm p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start">
+  <a href="listado.html" class="inline-flex items-center text-white/90">
+    <span class="material-symbols-outlined">arrow_back_ios_new</span>
+  </a>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Atlas Galáctico</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-white/90">menu</span>
+</button>
+</div>
+</div>
+<!-- Main content simplified -->
+<main class="p-4">
+  <h1 class="text-2xl font-bold text-white">Marte</h1>
+  <p class="text-white/80 mt-2">Detalle del cuerpo celeste (copiado desde el archivo original).</p>
+  <a href="listado.html" class="mt-4 inline-block text-accent font-bold">Volver al listado</a>
+</main>
+</div>
+</body></html>

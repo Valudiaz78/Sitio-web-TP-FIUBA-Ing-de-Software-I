@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atlas Galáctico</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b3d91",
+                        "accent": "#f39c12",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101722",
+                        "card-dark": "#192231",
+                        "text-light": "#e0e0e0",
+                        "text-dark": "#a0a0a0"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark text-text-light group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-dark/80 p-4 pb-2 justify-between backdrop-blur-sm">
+<button class="text-text-light flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 active:bg-white/20">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+<h1 class="text-text-light text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Atlas Galáctico</h1>
+<div class="size-10 shrink-0"></div> <!-- Spacer to balance the title -->
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-dark flex border-none bg-card-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-text-light focus:outline-0 focus:ring-2 focus:ring-accent border-none bg-card-dark focus:border-none h-full placeholder:text-text-dark px-4 pl-2 text-base font-normal leading-normal" placeholder="Buscar planetas, estrellas, galaxias..." value=""/>
+</div>
+</label>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 px-4 py-3 overflow-x-auto">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-accent px-4 py-2">
+<p class="text-background-dark text-sm font-bold leading-normal">Todos</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-dark px-4 py-2 hover:bg-white/10 active:bg-white/20">
+<p class="text-text-light text-sm font-medium leading-normal">Planetas</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-dark px-4 py-2 hover:bg-white/10 active:bg-white/20">
+<p class="text-text-light text-sm font-medium leading-normal">Estrellas</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-dark px-4 py-2 hover:bg-white/10 active:bg-white/20">
+<p class="text-text-light text-sm font-medium leading-normal">Galaxias</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-dark px-4 py-2 hover:bg-white/10 active:bg-white/20">
+<p class="text-text-light text-sm font-medium leading-normal">Sistemas</p>
+</button>
+</div>
+<!-- Celestial Body Cards List -->
+<div class="flex flex-col gap-4 p-4">
+<!-- Card 1 -->
+<div class="flex items-center justify-between gap-4 rounded-xl bg-card-dark p-4">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-accent text-xs font-bold uppercase tracking-wider">Planeta</p>
+<p class="text-text-light text-lg font-bold leading-tight">Marte</p>
+<p class="text-text-dark text-sm font-normal leading-normal">4to planeta desde el Sol</p>
+</div>
+<div class="flex-shrink-0">
+<div class="h-20 w-20 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Una representación artística del planeta Marte, con su distintiva superficie roja y casquetes polares." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkOVtYgQuYSBhJsfH4x_Vn_5lrKi__3yJtJ-W1vLIeUu1CqjvjTg_IWjrNcRgB0KrHcHEZNm_wYgDwgRK95HTopMspDfRQKSwvD2UCrgZ6p6RwGWk-kGjF4LRM48ydiPKI7hQjdd74FUC0nTmUPqRC54GAvg2MdEIhimtand3vijJ_KfpvudF-zGyswoqtsFdNml_WcAJw5fvkcuUNM-NCcWKLKX4CL4e7reaqsS02xvtEGtaFHlwzJ8_ooS-XU29BgEQRSLmSy0A");'></div>
+</div>
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex items-center justify-between gap-4 rounded-xl bg-card-dark p-4">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-accent text-xs font-bold uppercase tracking-wider">Galaxia</p>
+<p class="text-text-light text-lg font-bold leading-tight">Galaxia de Andrómeda</p>
+<p class="text-text-dark text-sm font-normal leading-normal">Nuestra vecina galáctica espiral.</p>
+</div>
+<div class="flex-shrink-0">
+<div class="h-20 w-20 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Una imagen vibrante de la Galaxia de Andrómeda, mostrando su núcleo brillante y brazos espirales." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3egkUI2v0nXBldDlDWkf02CBxEawcYmnEu0oY9S5JHomPHR2cHTwv5esMcM7aqsUDbNX7OnkcZrb3EF5xEeNxVPfHgWCEfLVHoAVMvJB7R4jQUXaiyzjrEaJHoHNIw0TQP9hA_bQdh9jUOJCNt674XXOPmv5_nI2NdfhYroAPuM6QjH_WZkiFfaA-cAr_WE93d8IzGvvuaWs5OlWb3vZgXAmNzVdC6Sl3X_NqRCTCCx-7DzWPDXxuwepmPxGTqIgnhIWGaYff4VA");'></div>
+</div>
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex items-center justify-between gap-4 rounded-xl bg-card-dark p-4">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-accent text-xs font-bold uppercase tracking-wider">Estrella</p>
+<p class="text-text-light text-lg font-bold leading-tight">Sirius</p>
+<p class="text-text-dark text-sm font-normal leading-normal">La estrella más brillante del cielo nocturno.</p>
+</div>
+<div class="flex-shrink-0">
+<div class="h-20 w-20 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Una ilustración de una estrella brillante y azul, representando a Sirius." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCAHhiSCVK6mnNbaRI8UsEozLB6EZdkMbM6uo6vGkXqtKwHZhHG8vbrX074gu6TC69L5BB5FqcdgnqZIgbKkZhwh57qLakCoIKc8Xf33bJE4l10V-i1wSYKdv2-extyMtC-qkSleT4bq6CPv0xj0FC6vuKfiCtZIxF4URpspO4gvoLh3DvnvJr69smGgvwm7nivKPKpBlKj_YvIaoaEE9rtAkOXt91pUE5gMlRtoFy5G8KfagK9r4w261g5XVmSm-MC1y2EgWSIJJc");'></div>
+</div>
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex items-center justify-between gap-4 rounded-xl bg-card-dark p-4">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-accent text-xs font-bold uppercase tracking-wider">Nebulosa</p>
+<p class="text-text-light text-lg font-bold leading-tight">Nebulosa del Cangrejo</p>
+<p class="text-text-dark text-sm font-normal leading-normal">Remanente de una supernova.</p>
+</div>
+<div class="flex-shrink-0">
+<div class="h-20 w-20 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Una colorida imagen de la Nebulosa del Cangrejo con filamentos de gas y polvo." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMhd1VGlo5DH6W16lPj3mVtT0UCajEVd4S1otNeXwi4LYoq3QnkO_91W6_mGFCPjp9ok0ClPwsYS4prbieizKW6KN8ivSrUKfPiI0b7v_mf9tVSYjVeMERh9mrenLeL2PxorZVEVtTaqWQV7t-b4-3h3ZNDUohLsST1LLxwXR0l9iHFjgvgRBkQ27CgY4TZCvLYRQfA3QGroi0YC-LwU3hBsFO0zlj0mKBLdsED094d9jFajTRIy88AgMiBjQrCKlCLfY0m9niLLY");'></div>
+</div>
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="flex items-center justify-between gap-4 rounded-xl bg-card-dark p-4">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-accent text-xs font-bold uppercase tracking-wider">Planeta</p>
+<p class="text-text-light text-lg font-bold leading-tight">Júpiter</p>
+<p class="text-text-dark text-sm font-normal leading-normal">El gigante gaseoso de nuestro sistema.</p>
+</div>
+<div class="flex-shrink-0">
+<div class="h-20 w-20 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Representación del planeta Júpiter, con sus bandas de nubes y la Gran Mancha Roja." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClEqwAD1VQoEAOfTeCSc1pOaaehHMXS7Tk-Y5rPacr9r61jgdbMxRYZfpyQEZ7nGyESgE0VEy__GAr4DLQrmQTMjhUT4So2vbtuFCOTlP3h31ReTKlOhl2qT9JpmqUTyDUQZJ3KpJIdnBtJIo77FdDabFUllVe6DNIRSMAVPE2EHLK0cSKYwyqxdpBUlG35ggMv0RKwL_UpZiRwsfWTStmxuq2A58w4_b2Z13zvWfuwLiEbJsigqNPdW5eKVZeKAM7l7yKiI6X1Kg");'></div>
+</div>
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-text-dark text-2xl">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

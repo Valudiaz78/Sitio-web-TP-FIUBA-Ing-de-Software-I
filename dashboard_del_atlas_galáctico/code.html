@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atlas Galáctico - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0b3d91",
+              "secondary": "#f39c12",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101722",
+              "text-primary-dark": "#f0f6fc",
+              "text-secondary-dark": "#8b949e",
+              "border-dark": "#324667",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.25rem", 
+                "lg": "0.5rem", 
+                "xl": "0.75rem", 
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-dark">
+<div class="relative min-h-screen w-full flex-col">
+<!-- Navigation Drawer -->
+<div class="absolute left-0 top-0 z-50 h-full w-full bg-black/40 hidden">
+<div class="flex h-full min-h-screen w-10/12 flex-col gap-4 bg-background-dark p-4">
+<p class="px-4 pb-2 pt-4 font-display text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Cmdr. Alex Vance</p>
+<ul class="flex flex-col gap-4">
+<li class="flex h-12 items-center gap-4 rounded-lg bg-primary/20 px-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<p class="truncate font-display text-base font-bold leading-tight text-secondary">Dashboard</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-lg px-4">
+<span class="material-symbols-outlined text-text-primary-dark">map</span>
+<p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Starmap</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-lg px-4">
+<span class="material-symbols-outlined text-text-primary-dark">public</span>
+<p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Celestial Bodies</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-lg px-4">
+<span class="material-symbols-outlined text-text-primary-dark">rocket_launch</span>
+<p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Missions</p>
+</li>
+<li class="flex h-12 items-center gap-4 rounded-lg px-4">
+<span class="material-symbols-outlined text-text-primary-dark">book_4</span>
+<p class="truncate font-display text-base font-bold leading-tight text-text-primary-dark">Encyclopedia</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between bg-background-dark p-4 pb-2">
+<button class="flex h-12 w-12 shrink-0 items-center justify-center text-text-primary-dark">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<h2 class="flex-1 text-center font-display text-lg font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Atlas Galáctico</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex h-12 min-w-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-transparent p-0 text-base font-bold leading-normal tracking-[0.015em] text-text-primary-dark">
+<span class="material-symbols-outlined text-3xl">search</span>
+</button>
+</div>
+</div>
+<!-- Headline Text -->
+<h1 class="px-4 pb-3 pt-6 text-left font-display text-[32px] font-bold leading-tight tracking-tight text-text-primary-dark">Galactic Overview</h1>
+<!-- Stats -->
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg border border-border-dark p-6">
+<p class="font-display text-base font-medium leading-normal text-text-secondary-dark">Celestial Bodies</p>
+<p class="font-display text-2xl font-bold leading-tight tracking-tight text-text-primary-dark">150,324</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg border border-border-dark p-6">
+<p class="font-display text-base font-medium leading-normal text-text-secondary-dark">Active Missions</p>
+<p class="font-display text-2xl font-bold leading-tight tracking-tight text-secondary">42</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg border border-border-dark p-6">
+<p class="font-display text-base font-medium leading-normal text-text-secondary-dark">Instruments</p>
+<p class="font-display text-2xl font-bold leading-tight tracking-tight text-text-primary-dark">18</p>
+</div>
+</div>
+<!-- Section Header -->
+<h2 class="px-4 pb-3 pt-5 font-display text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Featured Mission</h2>
+<!-- New Component: Featured Mission Card -->
+<div class="px-4">
+<div class="overflow-hidden rounded-xl border border-border-dark bg-background-dark/50">
+<img alt="An artist's impression of the Voyager I spacecraft traveling through deep space, with distant stars and nebulae in the background." class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5sj7wrt42XfsK7jplBgUw9pdWJdcyE46iDm0mX87LUre2eyJy8rhjRZQChSeWhoXlN1IeF0jnN_3OJZZ2cYGPYhGWsxp4HgZg_fmsA8h4OQjLjlTNYx99oNZ8a9iArKx3r-UrbVI6PTMIRoAFW1JWGxc-mTGnOAbx125vkyvWbhCvj6MMmNyJClCzygHBjwSr5geDl2PPGaSN1IaxnyMpyb8ahce_RJUfNSlDs-mqdzl-GE2qE0zvRHmNJ-3P3tm9O7qC5QxejAM"/>
+<div class="p-6">
+<h3 class="font-display text-xl font-bold text-text-primary-dark">Voyager I: Interstellar Journey</h3>
+<p class="mt-2 font-display text-base text-text-secondary-dark">Launched in 1977, the Voyager I probe continues its journey beyond our solar system, carrying the Golden Record as a message to potential extraterrestrial life.</p>
+<button class="mt-4 w-full rounded-lg bg-secondary py-3 text-center font-display text-base font-bold text-background-dark">View Mission Details</button>
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<h2 class="px-4 pb-3 pt-8 font-display text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-dark">Explore Categories</h2>
+<!-- New Component: Quick Access Buttons -->
+<div class="grid grid-cols-2 gap-4 p-4">
+<button class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+<span class="material-symbols-outlined">public</span>
+                    Planets
+                </button>
+<button class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+<span class="material-symbols-outlined">star</span>
+                    Stars
+                </button>
+<button class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+<span class="material-symbols-outlined">rocket_launch</span>
+                    Missions
+                </button>
+<button class="flex items-center justify-center gap-3 rounded-lg border border-border-dark bg-primary/20 py-4 text-center font-display text-base font-bold text-text-primary-dark">
+<span class="material-symbols-outlined">filter_drama</span>
+                    Nebulae
+                </button>
+</div>
+</div>
+</div>
+</body></html>
